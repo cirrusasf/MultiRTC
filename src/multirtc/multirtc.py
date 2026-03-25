@@ -280,7 +280,7 @@ def run_multirtc_comb(
 def create_parser(parser):
     parser.add_argument('platform', choices=SUPPORTED, help='Platform to create RTC for')
     parser.add_argument('granule', help='Data granule to create an RTC for.')
-    parser.add_argument('--resolution', type=float, help='Resolution of the output RTC (m)')
+    parser.add_argument('--resolution', type=float, deafult = 3.0, help='Resolution of the output RTC (m)')
     parser.add_argument(
         '--subset', nargs='*', type=float, default=[], help='Min_lon, Min_lat, Max_lon, Max_lat (degree)'
     )
