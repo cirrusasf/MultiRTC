@@ -489,7 +489,7 @@ def rtc(slc, geogrid, opts):
         with gdal.Open(input_filename, gdal.GA_ReadOnly) as ds:
             data = ds.GetRasterBand(1).ReadAsArray()
             data1 = np.absolute(data)
-            opts.rtc_min_value_db = float((10*np.log10(data1.min()) // 10)*10)
+            opts.rtc_min_value_db = float((10 * np.log10(data1.min()) // 10) * 10)
     elif isinstance(slc, S1BurstSlc):
         input_filename = slc.filepath.parent / (slc.filepath.stem + '_beta0.tif')
         slc.create_complex_beta0(input_filename, flag_thermal_correction=opts.apply_thermal_noise)
